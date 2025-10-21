@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Construction, Contact, Home, Projector, School } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="flex flex-row">
+          <div className="fixed max-w-[200px] h-screen flex flex-col justify-center items-center p-4">
+          <div className="max-w-[100px] h-[50vh] bg-amber-100 sticky top-0.5 flex flex-col gap-4 justify-evenly p-2 rounded-2xl">
+            <Home />
+            <Projector />
+            <School />
+            <Contact />
+            <hr className="w-full"/>
+            <Construction/>
+          </div>
+        </div>
         {children}
+        </div>
       </body>
     </html>
   );
